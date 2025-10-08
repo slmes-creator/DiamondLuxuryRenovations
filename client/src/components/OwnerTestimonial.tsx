@@ -4,7 +4,7 @@ export default function OwnerTestimonial() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="bg-white rounded-3xl shadow-2xl p-12 text-center">
           <img
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+            src="https://images.unsplash.com/photo-1495603889488-42d1d66e5523?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Ronald, Owner of Diamond Luxury Renovation"
             className="w-32 h-32 rounded-full object-cover shadow-xl mx-auto mb-6"
             data-testid="img-owner"
