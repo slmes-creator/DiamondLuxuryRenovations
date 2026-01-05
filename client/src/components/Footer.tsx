@@ -1,30 +1,56 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, Clock, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Link } from "wouter";
+import { Phone, Mail, Clock, MapPin, Facebook, Instagram, Linkedin, Star } from "lucide-react";
 
 const serviceAreas = [
-  "Brampton",
-  "Mississauga",
-  "Caledon",
-  "Vaughan",
-  "Toronto (GTA)"
+  { name: "Brampton", slug: "brampton" },
+  { name: "Mississauga", slug: "mississauga" },
+  { name: "Vaughan", slug: "vaughan" },
+  { name: "Caledon", slug: "caledon" },
+  { name: "Toronto (GTA)", slug: "toronto" },
+];
+
+const services = [
+  { name: "Flooring Installation", slug: "flooring" },
+  { name: "Staircase Refinishing", slug: "staircase" },
+  { name: "Framing", slug: "framing" },
+  { name: "Bathroom Renovations", slug: "bathroom" },
+  { name: "Basement Renovations", slug: "basement" },
+];
+
+const quickLinks = [
+  { name: "About Us", href: "/about" },
+  { name: "Portfolio", href: "/portfolio" },
+  { name: "Testimonials", href: "/testimonials" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8">
+    <footer className="bg-diamond-900 text-white">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
-            <h4 className="text-xl font-semibold mb-4">Contact Information</h4>
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-10 h-10 bg-gradient-to-br from-luxury-400 to-luxury-600 rounded-lg flex items-center justify-center">
+                <Star className="w-6 h-6 text-white fill-current" />
+              </div>
+              <span className="text-xl font-bold">Diamond Luxury Renovation</span>
+            </div>
+            <p className="text-gray-400 mb-6">
+              Premium general contractor serving Brampton and the Greater Toronto Area. 
+              Quality craftsmanship, guaranteed.
+            </p>
             <div className="space-y-3 text-gray-300">
-              <div className="flex items-center space-x-2">
+              <a href="tel:4164149170" className="flex items-center space-x-2 hover:text-luxury-400">
                 <Phone className="w-4 h-4" />
                 <span>(416) 414-9170</span>
-              </div>
-              <div className="flex items-center space-x-2">
+              </a>
+              <a href="mailto:gtaprorenovations@gmail.com" className="flex items-center space-x-2 hover:text-luxury-400">
                 <Mail className="w-4 h-4" />
                 <span>gtaprorenovations@gmail.com</span>
-              </div>
+              </a>
               <div className="flex items-center space-x-2">
                 <Clock className="w-4 h-4" />
                 <span>Mon-Fri: 7AM-6PM, Sat: 8AM-4PM</span>
@@ -33,48 +59,103 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xl font-semibold mb-4">Service Area</h4>
-            <div className="text-gray-300 space-y-1">
-              {serviceAreas.map((area, index) => (
-                <div key={index} className="flex items-center space-x-2">
-                  <MapPin className="w-3 h-3" />
-                  <span>{area}</span>
-                </div>
+            <h4 className="text-lg font-semibold mb-6">Our Services</h4>
+            <ul className="space-y-3">
+              {services.map((service) => (
+                <li key={service.slug}>
+                  <Link href={`/services/${service.slug}`}>
+                    <span className="text-gray-400 hover:text-luxury-400 cursor-pointer">
+                      {service.name}
+                    </span>
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
           <div>
-            <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
-            <div className="flex space-x-4 mb-4">
+            <h4 className="text-lg font-semibold mb-6">Service Areas</h4>
+            <ul className="space-y-3">
+              {serviceAreas.map((area) => (
+                <li key={area.slug} className="flex items-center space-x-2">
+                  <MapPin className="w-3 h-3 text-luxury-500" />
+                  <Link href={`/service-area/${area.slug}`}>
+                    <span className="text-gray-400 hover:text-luxury-400 cursor-pointer">
+                      {area.name}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+            <ul className="space-y-3 mb-8">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href}>
+                    <span className="text-gray-400 hover:text-luxury-400 cursor-pointer">
+                      {link.name}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
+            <div className="flex space-x-3">
               <Button
+                size="icon"
                 onClick={() => window.open('https://facebook.com', '_blank')}
-                className="bg-blue-600 p-3 rounded-lg hover:bg-blue-700 transition-colors h-auto"
+                className="bg-blue-600 hover:bg-blue-700"
                 data-testid="button-facebook"
               >
-                <Facebook className="w-5 h-5" />
+                <Facebook className="w-4 h-4" />
               </Button>
               <Button
+                size="icon"
                 onClick={() => window.open('https://instagram.com', '_blank')}
-                className="bg-pink-600 p-3 rounded-lg hover:bg-pink-700 transition-colors h-auto"
+                className="bg-pink-600 hover:bg-pink-700"
                 data-testid="button-instagram"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-4 h-4" />
               </Button>
               <Button
+                size="icon"
                 onClick={() => window.open('https://linkedin.com', '_blank')}
-                className="bg-blue-800 p-3 rounded-lg hover:bg-blue-900 transition-colors h-auto"
+                className="bg-blue-800 hover:bg-blue-900"
                 data-testid="button-linkedin"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-4 h-4" />
               </Button>
             </div>
-            <p className="text-gray-400 text-sm">Licensed & Insured • WSIB Covered</p>
           </div>
         </div>
+      </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Diamond Luxury Renovation. All rights reserved.</p>
+      <div className="border-t border-gray-800">
+        <div className="max-w-7xl mx-auto px-6 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-500 text-sm">
+              &copy; 2025 Diamond Luxury Renovation. All rights reserved.
+            </p>
+            <div className="flex items-center space-x-2 text-gray-500 text-sm">
+              <span>Licensed & Insured</span>
+              <span>•</span>
+              <span>WSIB Covered</span>
+            </div>
+            <div className="flex space-x-6 text-sm">
+              <Link href="/privacy-policy">
+                <span className="text-gray-500 hover:text-luxury-400 cursor-pointer">Privacy Policy</span>
+              </Link>
+              <Link href="/terms">
+                <span className="text-gray-500 hover:text-luxury-400 cursor-pointer">Terms of Service</span>
+              </Link>
+              <Link href="/accessibility">
+                <span className="text-gray-500 hover:text-luxury-400 cursor-pointer">Accessibility</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,0 +1,152 @@
+import Layout from "@/components/Layout";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "wouter";
+import { MapPin, Calendar, ArrowRight } from "lucide-react";
+
+const projects = [
+  {
+    id: 1,
+    title: "Modern Hardwood Flooring Installation",
+    location: "Brampton, ON",
+    category: "Flooring",
+    description: "Complete transformation of a 2,500 sq ft home with premium engineered hardwood flooring.",
+    beforeImage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2938&auto=format&fit=crop",
+    afterImage: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?q=80&w=2787&auto=format&fit=crop",
+    testimonial: "Absolutely stunning work. The team was professional and the results exceeded our expectations.",
+    client: "The Johnson Family",
+  },
+  {
+    id: 2,
+    title: "Staircase Refinishing & Railing Update",
+    location: "Mississauga, ON",
+    category: "Staircase",
+    description: "Complete staircase transformation with new oak treads, modern railings, and premium finish.",
+    beforeImage: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=2787&auto=format&fit=crop",
+    afterImage: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2787&auto=format&fit=crop",
+    testimonial: "Our staircase went from an eyesore to the highlight of our home. Incredible craftsmanship!",
+    client: "Michael & Sarah",
+  },
+  {
+    id: 3,
+    title: "Luxury Bathroom Renovation",
+    location: "Vaughan, ON",
+    category: "Bathroom",
+    description: "Full master bathroom remodel featuring heated floors, walk-in shower, and custom vanity.",
+    beforeImage: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2940&auto=format&fit=crop",
+    afterImage: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=2787&auto=format&fit=crop",
+    testimonial: "Diamond Luxury Renovation turned our outdated bathroom into a spa-like retreat.",
+    client: "The Chen Family",
+  },
+  {
+    id: 4,
+    title: "Complete Basement Finishing",
+    location: "Brampton, ON",
+    category: "Basement",
+    description: "Transformed unfinished basement into entertainment space with bar, home theater, and guest bedroom.",
+    beforeImage: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2940&auto=format&fit=crop",
+    afterImage: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2940&auto=format&fit=crop",
+    testimonial: "We essentially added a whole new floor to our home. The quality is exceptional.",
+    client: "David & Lisa",
+  },
+];
+
+export default function Portfolio() {
+  return (
+    <Layout
+      title="Renovation Portfolio Brampton | Diamond Luxury Renovation Projects"
+      description="View our portfolio of completed renovation projects in Brampton and the GTA. Before and after galleries of flooring, staircases, bathrooms, and basements."
+    >
+      <section className="py-20 bg-gradient-to-br from-diamond-900 via-diamond-800 to-diamond-900">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-testid="heading-portfolio">
+            Our Project Portfolio
+          </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Explore our collection of completed renovations throughout Brampton and the 
+            Greater Toronto Area. Each project showcases our commitment to excellence.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid gap-12">
+            {projects.map((project) => (
+              <Card key={project.id} className="overflow-hidden" data-testid={`card-project-${project.id}`}>
+                <CardContent className="p-0">
+                  <div className="p-6 bg-diamond-900">
+                    <div className="flex flex-wrap items-center justify-between gap-4">
+                      <div>
+                        <span className="px-3 py-1 bg-luxury-500/20 text-luxury-400 text-sm rounded-full">
+                          {project.category}
+                        </span>
+                        <h2 className="text-2xl font-bold text-white mt-2">{project.title}</h2>
+                      </div>
+                      <div className="flex items-center space-x-4 text-gray-300">
+                        <span className="flex items-center">
+                          <MapPin className="w-4 h-4 mr-1" />
+                          {project.location}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 gap-0">
+                    <div className="relative">
+                      <img
+                        src={project.beforeImage}
+                        alt={`${project.title} - Before`}
+                        className="w-full h-72 object-cover"
+                      />
+                      <span className="absolute top-4 left-4 px-4 py-2 bg-gray-900/80 text-white font-semibold rounded-lg">
+                        Before
+                      </span>
+                    </div>
+                    <div className="relative">
+                      <img
+                        src={project.afterImage}
+                        alt={`${project.title} - After`}
+                        className="w-full h-72 object-cover"
+                      />
+                      <span className="absolute top-4 left-4 px-4 py-2 bg-luxury-500 text-diamond-900 font-semibold rounded-lg">
+                        After
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="p-6">
+                    <p className="text-gray-700 mb-4">{project.description}</p>
+                    <blockquote className="border-l-4 border-luxury-500 pl-4 italic text-gray-600 mb-4">
+                      "{project.testimonial}"
+                      <footer className="text-sm text-gray-500 mt-2 not-italic">— {project.client}</footer>
+                    </blockquote>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-diamond-900">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-white mb-6">Ready to Be Our Next Success Story?</h2>
+          <p className="text-gray-300 mb-8">
+            Let's discuss your renovation project and create something beautiful together.
+          </p>
+          <Link href="/contact">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-luxury-500 to-luxury-600 text-diamond-900 font-semibold"
+              data-testid="button-portfolio-cta"
+            >
+              Get Free Estimate
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </Layout>
+  );
+}
