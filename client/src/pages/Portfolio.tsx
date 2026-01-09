@@ -26,8 +26,6 @@ const projects = [
     description: "Complete transformation of a 2,500 sq ft home with premium engineered hardwood flooring.",
     beforeImage: flooringBefore1,
     afterImage: flooringAfter1,
-    testimonial: "Absolutely stunning work. The team was professional and the results exceeded our expectations.",
-    client: "The Johnson Family",
   },
   {
     id: 2,
@@ -37,8 +35,6 @@ const projects = [
     description: "Complete staircase transformation with new oak treads, modern railings, and premium finish.",
     beforeImage: staircaseBefore1,
     afterImage: staircaseAfter1,
-    testimonial: "Our staircase went from an eyesore to the highlight of our home. Incredible craftsmanship!",
-    client: "Michael & Sarah",
   },
   {
     id: 3,
@@ -48,8 +44,6 @@ const projects = [
     description: "Full master bathroom remodel featuring heated floors, walk-in shower, and custom vanity.",
     beforeImage: bathroomBefore1,
     afterImage: bathroomAfter1,
-    testimonial: "Diamond Luxury Renovation turned our outdated bathroom into a spa-like retreat.",
-    client: "The Chen Family",
   },
   {
     id: 4,
@@ -59,8 +53,6 @@ const projects = [
     description: "Transformed dated interior into modern open-concept living space with premium finishes.",
     beforeImage: interiorBefore1,
     afterImage: interiorAfter1,
-    testimonial: "We essentially added a whole new floor to our home. The quality is exceptional.",
-    client: "David & Lisa",
   },
   {
     id: 5,
@@ -70,8 +62,6 @@ const projects = [
     description: "Beautiful tile installation featuring subway tile backsplash and modern floor tiles.",
     beforeImage: tilesBefore1,
     afterImage: tilesAfter1,
-    testimonial: "The tile work is flawless. Every detail was executed perfectly.",
-    client: "The Williams Family",
   },
   {
     id: 6,
@@ -81,8 +71,6 @@ const projects = [
     description: "Complete kitchen upgrade with new countertops, flooring, and modern fixtures.",
     beforeImage: kitchenBefore1,
     afterImage: kitchenAfter1,
-    testimonial: "Our kitchen is now the heart of our home. Beautiful work!",
-    client: "The Patel Family",
   },
 ];
 
@@ -151,11 +139,7 @@ export default function Portfolio() {
                   </div>
                   
                   <div className="p-6">
-                    <p className="text-gray-700 mb-4">{project.description}</p>
-                    <blockquote className="border-l-4 border-luxury-500 pl-4 italic text-gray-600 mb-4">
-                      "{project.testimonial}"
-                      <footer className="text-sm text-gray-500 mt-2 not-italic">— {project.client}</footer>
-                    </blockquote>
+                    <p className="text-gray-700">{project.description}</p>
                   </div>
                 </CardContent>
               </Card>

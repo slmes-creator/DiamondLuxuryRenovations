@@ -13,15 +13,15 @@ const serviceAreas = [
 const services = [
   { name: "Flooring Installation", slug: "flooring" },
   { name: "Staircase Refinishing", slug: "staircase" },
-  { name: "Framing", slug: "framing" },
+  { name: "Demolition & Framing", slug: "framing" },
   { name: "Bathroom Renovations", slug: "bathroom" },
   { name: "Basement Renovations", slug: "basement" },
+  { name: "Kitchen Renovation", slug: "kitchen" },
 ];
 
 const quickLinks = [
   { name: "About Us", href: "/about" },
   { name: "Portfolio", href: "/portfolio" },
-  { name: "Testimonials", href: "/testimonials" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];

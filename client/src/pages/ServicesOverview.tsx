@@ -2,13 +2,14 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
-import { ArrowRight, Layers, GitBranch, Frame, Bath, Home } from "lucide-react";
+import { ArrowRight, Layers, GitBranch, Frame, Bath, Home, UtensilsCrossed } from "lucide-react";
 
-import flooringImg from "@/assets/flooring-after-1.jpg";
-import staircaseImg from "@/assets/staircase-after-1.jpg";
+import flooringImg from "@/assets/flooring-after-4.jpg";
+import staircaseImg from "@/assets/staircase-after.jpg";
 import framingImg from "@/assets/framing.jpg";
-import bathroomImg from "@/assets/bathroom-after-1.jpg";
-import interiorImg from "@/assets/interior-remodel-after-1.jpg";
+import bathroomImg from "@/assets/bathroom-after3.jpg";
+import basementImg from "@/assets/room-after4.jpg";
+import kitchenImg from "@/assets/kitchen-after.jpg";
 
 const services = [
   {
@@ -49,7 +50,15 @@ const services = [
     slug: "basement",
     description: "Unlock your basement's potential with custom finishing and functional living spaces.",
     features: ["Full Finishing", "Home Theaters", "Bars & Kitchens", "Bedrooms"],
-    image: interiorImg,
+    image: basementImg,
+  },
+  {
+    icon: UtensilsCrossed,
+    title: "Kitchen Renovation",
+    slug: "kitchen",
+    description: "Transform your kitchen into a stunning culinary space with custom cabinets, countertops, and modern fixtures.",
+    features: ["Custom Cabinets", "Countertops", "Backsplash", "Modern Fixtures"],
+    image: kitchenImg,
   },
 ];
 

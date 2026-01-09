@@ -25,59 +25,26 @@ import staircaseAfter2 from "@/assets/staircase-after-2.jpg";
 import staircaseBefore3 from "@/assets/staircase-before-3.jpg";
 import staircaseAfter3 from "@/assets/staircase-after-3.jpg";
 
-import interiorBefore1 from "@/assets/interior-remodel-before-1.jpg";
-import interiorAfter1 from "@/assets/interior-remodel-after-1.jpg";
-import interiorBefore2 from "@/assets/interior-remodel-before-2.jpg";
-import interiorAfter2 from "@/assets/interior-remodel-after-2.jpg";
-
-import kitchenBefore1 from "@/assets/kitchen-before-1.jpg";
-import kitchenAfter1 from "@/assets/kitchen-after-1.jpg";
-
 import tilesBefore1 from "@/assets/tiles-before-1.jpg";
 import tilesAfter1 from "@/assets/tiles-after-1.jpg";
 
 const galleryCategories = [
   {
-    id: "flooring",
-    title: "Flooring",
+    id: "staircase",
+    title: "Staircase",
     pairs: [
-      { before: flooringBefore1, after: flooringAfter1, title: "Hardwood Flooring Transformation" },
-      { before: flooringBefore2, after: flooringAfter2, title: "Living Room Floor Upgrade" },
-      { before: flooringBefore3, after: flooringAfter3, title: "Modern Flooring Installation" },
-      { before: flooringBefore4, after: flooringAfter4, title: "Premium Floor Refinishing" },
+      { before: staircaseBefore3, after: staircaseAfter3, title: "Modern Stair Makeover" },
+      { before: staircaseBefore1, after: staircaseAfter1, title: "Custom Staircase Refinishing" },
+      { before: staircaseBefore2, after: staircaseAfter2, title: "Oak Staircase Restoration" },
     ]
   },
   {
     id: "bathroom",
     title: "Bathroom",
     pairs: [
-      { before: bathroomBefore1, after: bathroomAfter1, title: "Luxury Bathroom Remodel" },
-      { before: bathroomBefore2, after: bathroomAfter2, title: "Master Bath Renovation" },
       { before: bathroomBefore3, after: bathroomAfter3, title: "Modern Bathroom Update" },
-    ]
-  },
-  {
-    id: "staircase",
-    title: "Staircase",
-    pairs: [
-      { before: staircaseBefore1, after: staircaseAfter1, title: "Custom Staircase Refinishing" },
-      { before: staircaseBefore2, after: staircaseAfter2, title: "Oak Staircase Restoration" },
-      { before: staircaseBefore3, after: staircaseAfter3, title: "Modern Stair Makeover" },
-    ]
-  },
-  {
-    id: "interior",
-    title: "Interior Remodel",
-    pairs: [
-      { before: interiorBefore1, after: interiorAfter1, title: "Complete Interior Transformation" },
-      { before: interiorBefore2, after: interiorAfter2, title: "Open Concept Renovation" },
-    ]
-  },
-  {
-    id: "kitchen",
-    title: "Kitchen",
-    pairs: [
-      { before: kitchenBefore1, after: kitchenAfter1, title: "Kitchen Renovation" },
+      { before: bathroomBefore2, after: bathroomAfter2, title: "Master Bath Renovation" },
+      { before: bathroomBefore1, after: bathroomAfter1, title: "Luxury Bathroom Remodel" },
     ]
   },
   {
@@ -86,7 +53,17 @@ const galleryCategories = [
     pairs: [
       { before: tilesBefore1, after: tilesAfter1, title: "Tile Installation" },
     ]
-  }
+  },
+  {
+    id: "flooring",
+    title: "Flooring",
+    pairs: [
+      { before: flooringBefore4, after: flooringAfter4, title: "Premium Floor Refinishing" },
+      { before: flooringBefore2, after: flooringAfter2, title: "Living Room Floor Upgrade" },
+      { before: flooringBefore3, after: flooringAfter3, title: "Modern Flooring Installation" },
+      { before: flooringBefore1, after: flooringAfter1, title: "Hardwood Flooring Transformation" },
+    ]
+  },
 ];
 
 function BeforeAfterSlider({ before, after, title }: { before: string; after: string; title: string }) {
@@ -144,7 +121,7 @@ function BeforeAfterSlider({ before, after, title }: { before: string; after: st
 }
 
 export default function Gallery() {
-  const [activeCategory, setActiveCategory] = useState("flooring");
+  const [activeCategory, setActiveCategory] = useState("staircase");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const currentCategory = galleryCategories.find(cat => cat.id === activeCategory)!;
@@ -223,12 +200,12 @@ export default function Gallery() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-12">
+        <div className="flex flex-wrap justify-center gap-4 mt-12">
           {currentCategory.pairs.map((pair, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`relative rounded-lg overflow-hidden aspect-square transition-all duration-300 ${
+              className={`relative rounded-lg overflow-hidden w-24 h-24 md:w-28 md:h-28 transition-all duration-300 ${
                 currentIndex === index ? "ring-4 ring-luxury-500 scale-105" : "opacity-70 hover:opacity-100"
               }`}
               data-testid={`thumbnail-${activeCategory}-${index}`}

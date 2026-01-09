@@ -8,7 +8,6 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import ServicesOverview from "@/pages/ServicesOverview";
 import Portfolio from "@/pages/Portfolio";
-import Testimonials from "@/pages/Testimonials";
 import Blog from "@/pages/Blog";
 import Contact from "@/pages/Contact";
 
@@ -17,6 +16,7 @@ import Staircase from "@/pages/services/Staircase";
 import Framing from "@/pages/services/Framing";
 import Bathroom from "@/pages/services/Bathroom";
 import Basement from "@/pages/services/Basement";
+import Kitchen from "@/pages/services/Kitchen";
 
 import Brampton from "@/pages/service-area/Brampton";
 import Mississauga from "@/pages/service-area/Mississauga";
@@ -37,7 +37,6 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/services" component={ServicesOverview} />
       <Route path="/portfolio" component={Portfolio} />
-      <Route path="/testimonials" component={Testimonials} />
       <Route path="/blog" component={Blog} />
       <Route path="/contact" component={Contact} />
       
@@ -46,6 +45,7 @@ function Router() {
       <Route path="/services/framing" component={Framing} />
       <Route path="/services/bathroom" component={Bathroom} />
       <Route path="/services/basement" component={Basement} />
+      <Route path="/services/kitchen" component={Kitchen} />
       
       <Route path="/service-area/brampton" component={Brampton} />
       <Route path="/service-area/mississauga" component={Mississauga} />
