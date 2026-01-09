@@ -2,7 +2,20 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
-import { MapPin, Calendar, ArrowRight } from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
+
+import flooringBefore1 from "@/assets/flooring-before-1.jpg";
+import flooringAfter1 from "@/assets/flooring-after-1.jpg";
+import staircaseBefore1 from "@/assets/staircase-before-1.jpg";
+import staircaseAfter1 from "@/assets/staircase-after-1.jpg";
+import bathroomBefore1 from "@/assets/bathroom-before1.jpg";
+import bathroomAfter1 from "@/assets/bathroom-after1.jpg";
+import interiorBefore1 from "@/assets/interior-remodel-before-1.jpg";
+import interiorAfter1 from "@/assets/interior-remodel-after-1.jpg";
+import tilesBefore1 from "@/assets/tiles-before-1.jpg";
+import tilesAfter1 from "@/assets/tiles-after-1.jpg";
+import kitchenBefore1 from "@/assets/kitchen-before-1.jpg";
+import kitchenAfter1 from "@/assets/kitchen-after-1.jpg";
 
 const projects = [
   {
@@ -11,8 +24,8 @@ const projects = [
     location: "Brampton, ON",
     category: "Flooring",
     description: "Complete transformation of a 2,500 sq ft home with premium engineered hardwood flooring.",
-    beforeImage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2938&auto=format&fit=crop",
-    afterImage: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?q=80&w=2787&auto=format&fit=crop",
+    beforeImage: flooringBefore1,
+    afterImage: flooringAfter1,
     testimonial: "Absolutely stunning work. The team was professional and the results exceeded our expectations.",
     client: "The Johnson Family",
   },
@@ -22,8 +35,8 @@ const projects = [
     location: "Mississauga, ON",
     category: "Staircase",
     description: "Complete staircase transformation with new oak treads, modern railings, and premium finish.",
-    beforeImage: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=2787&auto=format&fit=crop",
-    afterImage: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2787&auto=format&fit=crop",
+    beforeImage: staircaseBefore1,
+    afterImage: staircaseAfter1,
     testimonial: "Our staircase went from an eyesore to the highlight of our home. Incredible craftsmanship!",
     client: "Michael & Sarah",
   },
@@ -33,21 +46,43 @@ const projects = [
     location: "Vaughan, ON",
     category: "Bathroom",
     description: "Full master bathroom remodel featuring heated floors, walk-in shower, and custom vanity.",
-    beforeImage: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2940&auto=format&fit=crop",
-    afterImage: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=2787&auto=format&fit=crop",
+    beforeImage: bathroomBefore1,
+    afterImage: bathroomAfter1,
     testimonial: "Diamond Luxury Renovation turned our outdated bathroom into a spa-like retreat.",
     client: "The Chen Family",
   },
   {
     id: 4,
-    title: "Complete Basement Finishing",
+    title: "Complete Interior Remodel",
     location: "Brampton, ON",
-    category: "Basement",
-    description: "Transformed unfinished basement into entertainment space with bar, home theater, and guest bedroom.",
-    beforeImage: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2940&auto=format&fit=crop",
-    afterImage: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2940&auto=format&fit=crop",
+    category: "Interior",
+    description: "Transformed dated interior into modern open-concept living space with premium finishes.",
+    beforeImage: interiorBefore1,
+    afterImage: interiorAfter1,
     testimonial: "We essentially added a whole new floor to our home. The quality is exceptional.",
     client: "David & Lisa",
+  },
+  {
+    id: 5,
+    title: "Kitchen Tile Backsplash & Flooring",
+    location: "Caledon, ON",
+    category: "Tiles",
+    description: "Beautiful tile installation featuring subway tile backsplash and modern floor tiles.",
+    beforeImage: tilesBefore1,
+    afterImage: tilesAfter1,
+    testimonial: "The tile work is flawless. Every detail was executed perfectly.",
+    client: "The Williams Family",
+  },
+  {
+    id: 6,
+    title: "Kitchen Renovation",
+    location: "Toronto, ON",
+    category: "Kitchen",
+    description: "Complete kitchen upgrade with new countertops, flooring, and modern fixtures.",
+    beforeImage: kitchenBefore1,
+    afterImage: kitchenAfter1,
+    testimonial: "Our kitchen is now the heart of our home. Beautiful work!",
+    client: "The Patel Family",
   },
 ];
 

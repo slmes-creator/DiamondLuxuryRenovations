@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
 import { CheckCircle, Phone, ArrowRight } from "lucide-react";
+import interiorAfter1 from "@/assets/interior-remodel-after-1.jpg";
+import interiorAfter2 from "@/assets/interior-remodel-after-2.jpg";
 
 const benefits = [
   "Complete basement finishing from start to end",
@@ -50,7 +52,7 @@ export default function Basement() {
       <section className="relative py-24 bg-gradient-to-br from-diamond-900 via-diamond-800 to-diamond-900">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2940&auto=format&fit=crop"
+            src={interiorAfter1}
             alt="Basement renovation in Brampton"
             className="w-full h-full object-cover opacity-20"
           />
@@ -104,7 +106,7 @@ export default function Basement() {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2940&auto=format&fit=crop"
+                src={interiorAfter2}
                 alt="Finished basement living space"
                 className="rounded-2xl shadow-xl w-full h-96 object-cover"
               />

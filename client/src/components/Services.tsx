@@ -1,31 +1,52 @@
+import flooringAfter from "@/assets/flooring-after-1.jpg";
+import tilesAfter from "@/assets/tiles-after-1.jpg";
+import staircaseAfter from "@/assets/staircase-after-1.jpg";
+import bathroomAfter from "@/assets/bathroom-after-1.jpg";
+import interiorAfter from "@/assets/interior-remodel-after-1.jpg";
+import framingImg from "@/assets/framing.jpg";
+
 const services = [
   {
     id: 1,
     title: "Premium Flooring",
     description: "Exquisite hardwood, luxury vinyl, and engineered flooring with lifetime warranties",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+    image: flooringAfter,
     alt: "Hardwood flooring installation"
   },
   {
     id: 2,
     title: "Designer Tiles",
     description: "Italian marble, porcelain, and natural stone installations with precision craftsmanship",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+    image: tilesAfter,
     alt: "Tile installation work"
   },
   {
     id: 3,
     title: "Custom Staircases",
     description: "Architectural masterpieces with premium materials and flawless finishing",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+    image: staircaseAfter,
     alt: "Custom staircase construction"
   },
   {
     id: 4,
-    title: "Luxury Renovations",
+    title: "Bathroom Renovations",
+    description: "Complete bathroom transformations with luxury fixtures and elegant design",
+    image: bathroomAfter,
+    alt: "Bathroom renovation project"
+  },
+  {
+    id: 5,
+    title: "Interior Remodeling",
     description: "Complete home transformations with designer finishes and premium materials",
-    image: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+    image: interiorAfter,
     alt: "Home renovation project"
+  },
+  {
+    id: 6,
+    title: "Demolition & Framing",
+    description: "Professional structural work including demolition, framing, and load-bearing modifications",
+    image: framingImg,
+    alt: "Framing and demolition work"
   }
 ];
 
@@ -34,14 +55,14 @@ export default function Services() {
     <section className="py-20 bg-diamond-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h3 className="text-5xl font-bold text-white mb-6">Premium Services</h3>
+          <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">Premium Services</h3>
           <div className="w-24 h-1 bg-luxury-500 mx-auto mb-6"></div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Elevating every space with masterful craftsmanship and luxury finishes
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
             <div
               key={service.id}

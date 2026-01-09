@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import heroImage from "@/assets/interior-remodel-after-1.jpg";
 
 interface HeroProps {
   onViewGallery?: () => void;
@@ -21,20 +22,20 @@ export default function Hero({ onViewGallery }: HeroProps) {
     <section 
       className="min-h-screen flex items-center justify-center text-center text-white relative overflow-hidden"
       style={{
-        background: 'linear-gradient(rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9)), url(https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80)',
+        backgroundImage: `url(${heroImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-diamond-900/70 via-diamond-900/80 to-diamond-900/90"></div>
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="mb-8">
-          <h2 className="text-7xl font-black mb-6 tracking-tight leading-tight">
+          <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-tight">
             <span className="block text-white">LUXURY</span>
             <span className="block text-luxury-400">REDEFINED</span>
           </h2>
           <div className="w-24 h-1 bg-luxury-500 mx-auto mb-8"></div>
-          <p className="text-2xl font-light opacity-95 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl font-light opacity-95 max-w-3xl mx-auto leading-relaxed">
             Transforming ordinary spaces into extraordinary experiences with unmatched craftsmanship and attention to detail
           </p>
         </div>

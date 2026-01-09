@@ -4,14 +4,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
 import { CheckCircle, Phone, ArrowRight } from "lucide-react";
+import framingImg from "@/assets/framing.jpg";
+import framing2Img from "@/assets/framing1.jpg";
 
 const benefits = [
+  "Safe and efficient demolition services",
   "Structural framing for renovations and additions",
   "Basement framing and finishing prep",
   "Load-bearing wall modifications",
   "Custom room layouts and partitions",
-  "Window and door rough-ins",
-  "Code-compliant construction",
+  "Code-compliant construction with permits",
 ];
 
 const process = [
@@ -44,13 +46,13 @@ const faqs = [
 export default function Framing() {
   return (
     <Layout
-      title="Framing Services Brampton | Diamond Luxury Renovation"
-      description="Professional framing services in Brampton. Basement framing, structural modifications, and additions. Free estimates. Call (416) 414-9170."
+      title="Demolition & Framing Services Brampton | Diamond Luxury Renovation"
+      description="Professional demolition and framing services in Brampton. Safe demolition, basement framing, structural modifications. Free estimates. Call (416) 414-9170."
     >
       <section className="relative py-24 bg-gradient-to-br from-diamond-900 via-diamond-800 to-diamond-900">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2940&auto=format&fit=crop"
+            src={framingImg}
             alt="Professional framing services in Brampton"
             className="w-full h-full object-cover opacity-20"
           />
@@ -58,11 +60,11 @@ export default function Framing() {
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-testid="heading-framing">
-              Professional Framing in Brampton
+              Demolition & Framing in Brampton
             </h1>
             <p className="text-xl text-gray-300 mb-8">
-              Quality structural framing for renovations, additions, and basement finishing. 
-              Built to code with precision craftsmanship.
+              Professional demolition and structural framing for renovations, additions, and basement finishing. 
+              Safe, code-compliant work with precision craftsmanship.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
@@ -86,12 +88,12 @@ export default function Framing() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-diamond-900 mb-6">
-                Expert Framing for Your Project
+                Expert Demolition & Framing Services
               </h2>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                Whether you're finishing a basement, adding a room, or reconfiguring your 
-                home's layout, proper framing is the foundation of a successful renovation. 
-                Our experienced team delivers precise, code-compliant work.
+                From safe demolition of existing structures to precision framing for new layouts, 
+                we handle every aspect of structural work. Whether you're finishing a basement, 
+                adding a room, or reconfiguring your home, our experienced team delivers code-compliant results.
               </p>
               <ul className="space-y-3">
                 {benefits.map((benefit, index) => (
@@ -104,7 +106,7 @@ export default function Framing() {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2831&auto=format&fit=crop"
+                src={framing2Img}
                 alt="Professional framing construction"
                 className="rounded-2xl shadow-xl w-full h-96 object-cover"
               />

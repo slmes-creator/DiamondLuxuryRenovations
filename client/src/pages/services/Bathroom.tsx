@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
 import { CheckCircle, Phone, ArrowRight } from "lucide-react";
+import bathroomAfter1 from "@/assets/bathroom-after-1.jpg";
+import bathroomAfter2 from "@/assets/bathroom-after-2.jpg";
 
 const benefits = [
   "Complete bathroom remodels from design to finish",
@@ -50,7 +52,7 @@ export default function Bathroom() {
       <section className="relative py-24 bg-gradient-to-br from-diamond-900 via-diamond-800 to-diamond-900">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=2787&auto=format&fit=crop"
+            src={bathroomAfter1}
             alt="Luxury bathroom renovation in Brampton"
             className="w-full h-full object-cover opacity-20"
           />
@@ -104,7 +106,7 @@ export default function Bathroom() {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2940&auto=format&fit=crop"
+                src={bathroomAfter2}
                 alt="Modern bathroom design"
                 className="rounded-2xl shadow-xl w-full h-96 object-cover"
               />

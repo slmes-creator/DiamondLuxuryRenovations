@@ -4,6 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { ArrowRight, Layers, GitBranch, Frame, Bath, Home } from "lucide-react";
 
+import flooringImg from "@/assets/flooring-after-1.jpg";
+import staircaseImg from "@/assets/staircase-after-1.jpg";
+import framingImg from "@/assets/framing.jpg";
+import bathroomImg from "@/assets/bathroom-after-1.jpg";
+import interiorImg from "@/assets/interior-remodel-after-1.jpg";
+
 const services = [
   {
     icon: Layers,
@@ -11,7 +17,7 @@ const services = [
     slug: "flooring",
     description: "Premium hardwood, laminate, vinyl, and tile flooring installed with precision craftsmanship.",
     features: ["Hardwood", "Laminate", "Vinyl Plank", "Tile"],
-    image: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?q=80&w=2787&auto=format&fit=crop",
+    image: flooringImg,
   },
   {
     icon: GitBranch,
@@ -19,15 +25,15 @@ const services = [
     slug: "staircase",
     description: "Transform worn staircases into stunning focal points with expert refinishing and custom designs.",
     features: ["Refinishing", "Custom Rails", "Treads & Risers", "Modern Updates"],
-    image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2787&auto=format&fit=crop",
+    image: staircaseImg,
   },
   {
     icon: Frame,
-    title: "Framing",
+    title: "Demolition & Framing",
     slug: "framing",
-    description: "Structural framing for renovations, additions, and new construction projects.",
-    features: ["Basement Framing", "Wall Modifications", "Load-Bearing", "Additions"],
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2940&auto=format&fit=crop",
+    description: "Professional demolition and structural framing for renovations, additions, and new construction.",
+    features: ["Safe Demolition", "Basement Framing", "Load-Bearing Walls", "Structural Work"],
+    image: framingImg,
   },
   {
     icon: Bath,
@@ -35,7 +41,7 @@ const services = [
     slug: "bathroom",
     description: "Complete bathroom transformations from concept to completion, featuring luxury finishes.",
     features: ["Full Remodels", "Tile Work", "Fixtures", "Vanities"],
-    image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=2787&auto=format&fit=crop",
+    image: bathroomImg,
   },
   {
     icon: Home,
@@ -43,7 +49,7 @@ const services = [
     slug: "basement",
     description: "Unlock your basement's potential with custom finishing and functional living spaces.",
     features: ["Full Finishing", "Home Theaters", "Bars & Kitchens", "Bedrooms"],
-    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2940&auto=format&fit=crop",
+    image: interiorImg,
   },
 ];
 

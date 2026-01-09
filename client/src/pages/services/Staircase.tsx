@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
 import { CheckCircle, Phone, ArrowRight } from "lucide-react";
+import staircaseAfter1 from "@/assets/staircase-after-1.jpg";
+import staircaseAfter2 from "@/assets/staircase-after-2.jpg";
 
 const benefits = [
   "Complete staircase refinishing and restoration",
@@ -50,7 +52,7 @@ export default function Staircase() {
       <section className="relative py-24 bg-gradient-to-br from-diamond-900 via-diamond-800 to-diamond-900">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2787&auto=format&fit=crop"
+            src={staircaseAfter1}
             alt="Staircase refinishing in Brampton"
             className="w-full h-full object-cover opacity-20"
           />
@@ -104,7 +106,7 @@ export default function Staircase() {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=2787&auto=format&fit=crop"
+                src={staircaseAfter2}
                 alt="Beautiful refinished staircase"
                 className="rounded-2xl shadow-xl w-full h-96 object-cover"
               />
