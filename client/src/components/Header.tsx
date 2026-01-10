@@ -24,12 +24,12 @@ export default function Header() {
           <Link href="/">
             <div className="flex items-center space-x-4 cursor-pointer group">
               <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-luxury-400 to-luxury-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-luxury-400 to-luxury-600 rounded-lg blur opacity-40 transition duration-300"></div>
                 <div className="relative w-14 h-14 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-inner overflow-hidden border border-white/20">
                   <img 
                     src={logoImg} 
                     alt="Diamond Luxury Renovations" 
-                    className="w-full h-full object-contain p-1 transform group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-contain p-1 scale-110"
                   />
                 </div>
               </div>
