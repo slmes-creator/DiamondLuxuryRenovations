@@ -66,7 +66,7 @@ export default function Terms() {
           <h2 className="text-2xl font-bold text-diamond-900 mb-4">Contact</h2>
           <p className="text-gray-700 mb-6">
             For questions about these Terms, contact us at:<br />
-            Email: gtaprorenovations@gmail.com<br />
+            Email: diamondluxuryrenovations@gmail.com<br />
             Phone: (416) 414-9170
           </p>
 

@@ -47,7 +47,7 @@ export default function Accessibility() {
           </p>
           <ul className="list-disc pl-6 text-gray-700 mb-6 space-y-2">
             <li>Phone: (416) 414-9170 - We're happy to assist over the phone</li>
-            <li>Email: gtaprorenovations@gmail.com</li>
+            <li>Email: diamondluxuryrenovations@gmail.com</li>
           </ul>
 
           <h2 className="text-2xl font-bold text-diamond-900 mb-4">Continuous Improvement</h2>

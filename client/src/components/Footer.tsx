@@ -48,9 +48,9 @@ export default function Footer() {
                 <Phone className="w-4 h-4" />
                 <span>(416) 414-9170</span>
               </a>
-              <a href="mailto:gtaprorenovations@gmail.com" className="flex items-center space-x-2 hover:text-luxury-400">
+              <a href="mailto:diamondluxuryrenovations@gmail.com" className="flex items-center space-x-2 hover:text-luxury-400">
                 <Mail className="w-4 h-4" />
-                <span>gtaprorenovations@gmail.com</span>
+                <span>diamondluxuryrenovations@gmail.com</span>
               </a>
               <div className="flex items-center space-x-2">
                 <Clock className="w-4 h-4" />

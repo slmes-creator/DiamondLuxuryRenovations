@@ -5,7 +5,7 @@ const localBusinessSchema = {
   "image": "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?q=80&w=2787&auto=format&fit=crop",
   "url": "https://diamondluxuryrenovation.com",
   "telephone": "+1-416-414-9170",
-  "email": "gtaprorenovations@gmail.com",
+  "email": "diamondluxuryrenovations@gmail.com",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Brampton",

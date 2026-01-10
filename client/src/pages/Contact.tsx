@@ -227,13 +227,13 @@ export default function Contact() {
                       </div>
                     </a>
                     
-                    <a href="mailto:gtaprorenovations@gmail.com" className="flex items-start space-x-3 group">
+                    <a href="mailto:diamondluxuryrenovations@gmail.com" className="flex items-start space-x-3 group">
                       <div className="w-10 h-10 bg-luxury-100 rounded-lg flex items-center justify-center flex-shrink-0">
                         <Mail className="w-5 h-5 text-luxury-600" />
                       </div>
                       <div>
                         <p className="text-sm text-gray-500">Email Us</p>
-                        <p className="font-semibold text-diamond-900 group-hover:text-luxury-600 break-all">gtaprorenovations@gmail.com</p>
+                        <p className="font-semibold text-diamond-900 group-hover:text-luxury-600 break-all">diamondluxuryrenovations@gmail.com</p>
                       </div>
                     </a>
                     

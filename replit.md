@@ -101,7 +101,7 @@ client/src/
 
 ### Contact Information
 - Phone: (416) 414-9170
-- Email: gtaprorenovations@gmail.com
+- Email: diamondluxuryrenovations@gmail.com
 - Hours: Mon-Fri 7AM-6PM, Sat 8AM-4PM
 - Service Areas: Brampton, Mississauga, Vaughan, Caledon, Toronto
 

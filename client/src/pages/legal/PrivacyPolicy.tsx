@@ -59,13 +59,13 @@ export default function PrivacyPolicy() {
           <h2 className="text-2xl font-bold text-diamond-900 mb-4">Your Rights</h2>
           <p className="text-gray-700 mb-6">
             You have the right to access, correct, or delete your personal information. 
-            Contact us at gtaprorenovations@gmail.com to exercise these rights.
+            Contact us at diamondluxuryrenovations@gmail.com to exercise these rights.
           </p>
 
           <h2 className="text-2xl font-bold text-diamond-900 mb-4">Contact Us</h2>
           <p className="text-gray-700 mb-6">
             If you have questions about this Privacy Policy, please contact us at:<br />
-            Email: gtaprorenovations@gmail.com<br />
+            Email: diamondluxuryrenovations@gmail.com<br />
             Phone: (416) 414-9170
           </p>
 
