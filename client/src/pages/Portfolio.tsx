@@ -19,12 +19,30 @@ import staircaseAfter2 from "@/assets/staircase-after-2.jpg";
 
 import interiorAfter from "@/assets/interior-remodel-after.jpg";
 import tilesAfter1 from "@/assets/tiles-after-1.jpg";
+import kitchenAfter1 from "@/assets/kitchen-after1.jpg";
+import kitchenAfter2 from "@/assets/kitchen-after2.jpg";
 
-const categories = ["All", "Bathroom", "Flooring", "Staircase", "Interior", "Tiles"];
+const categories = ["All", "Kitchen", "Bathroom", "Flooring", "Staircase", "Interior", "Tiles"];
 
 const projects = [
   {
     id: 1,
+    title: "Modern Chef's Kitchen",
+    location: "Brampton, ON",
+    category: "Kitchen",
+    description: "Complete kitchen overhaul featuring custom white cabinetry, high-end stainless steel appliances, and a beautiful subway tile backsplash.",
+    image: kitchenAfter1,
+  },
+  {
+    id: 2,
+    title: "Luxury Kitchen Remodel",
+    location: "Mississauga, ON",
+    category: "Kitchen",
+    description: "Premium kitchen renovation with dark wood cabinetry, integrated lighting, and a modern open-concept layout perfect for entertaining.",
+    image: kitchenAfter2,
+  },
+  {
+    id: 3,
     title: "Luxury Marble Shower Suite",
     location: "Brampton, ON",
     category: "Bathroom",
@@ -32,7 +50,7 @@ const projects = [
     image: bathroomAfter6,
   },
   {
-    id: 2,
+    id: 4,
     title: "Modern Grey Tile Bathroom",
     location: "Mississauga, ON",
     category: "Bathroom",
@@ -40,7 +58,7 @@ const projects = [
     image: bathroomAfter1,
   },
   {
-    id: 3,
+    id: 5,
     title: "Premium Stone Shower Installation",
     location: "Vaughan, ON",
     category: "Bathroom",
@@ -48,7 +66,7 @@ const projects = [
     image: bathroomAfter8,
   },
   {
-    id: 4,
+    id: 6,
     title: "Dark Oak Hardwood Flooring",
     location: "Brampton, ON",
     category: "Flooring",
@@ -56,7 +74,7 @@ const projects = [
     image: flooringAfter5,
   },
   {
-    id: 5,
+    id: 7,
     title: "Light Ash Vinyl Plank Flooring",
     location: "Caledon, ON",
     category: "Flooring",
@@ -64,7 +82,7 @@ const projects = [
     image: flooringAfter11,
   },
   {
-    id: 6,
+    id: 8,
     title: "Grey Wood-Look Laminate",
     location: "Oakville, ON",
     category: "Flooring",
@@ -72,7 +90,7 @@ const projects = [
     image: flooringAfter3,
   },
   {
-    id: 7,
+    id: 9,
     title: "Curved Staircase with Iron Balusters",
     location: "Vaughan, ON",
     category: "Staircase",
@@ -80,7 +98,7 @@ const projects = [
     image: staircaseAfter1,
   },
   {
-    id: 8,
+    id: 10,
     title: "Modern White & Black Railing System",
     location: "Brampton, ON",
     category: "Staircase",
@@ -88,7 +106,7 @@ const projects = [
     image: staircaseAfter6,
   },
   {
-    id: 9,
+    id: 11,
     title: "Natural Wood Stair Treads",
     location: "Milton, ON",
     category: "Staircase",
@@ -96,7 +114,7 @@ const projects = [
     image: staircaseAfter2,
   },
   {
-    id: 10,
+    id: 12,
     title: "Modern Entryway Transformation",
     location: "Brampton, ON",
     category: "Interior",
@@ -104,7 +122,7 @@ const projects = [
     image: interiorAfter,
   },
   {
-    id: 11,
+    id: 13,
     title: "Premium Tile Installation",
     location: "Mississauga, ON",
     category: "Tiles",
@@ -162,7 +180,7 @@ export default function Portfolio() {
             {filteredProjects.map((project) => (
               <Card 
                 key={project.id} 
-                className="overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-xl"
+                className="overflow-hidden group cursor-default transition-all duration-300 hover:shadow-xl"
                 data-testid={`card-project-${project.id}`}
               >
                 <CardContent className="p-0">
