@@ -5,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Link } from "wouter";
 import { CheckCircle, Phone, ArrowRight } from "lucide-react";
 import roomAfterV2 from "@/assets/room-after-v2.jpg";
-import basementHero from "@/assets/stock_images/modern_luxurious_fin_89dcc6f0.jpg";
+import basementHero from "@assets/stock_images/modern_luxurious_fin_89dcc6f0.jpg";
 
 const benefits = [
   "Complete basement finishing from start to end",
