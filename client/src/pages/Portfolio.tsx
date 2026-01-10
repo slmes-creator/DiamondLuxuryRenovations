@@ -18,6 +18,7 @@ import staircaseAfter6 from "@/assets/staircase-after6.jpg";
 import staircaseAfter2 from "@/assets/staircase-after-2.jpg";
 
 import interiorAfter from "@/assets/interior-remodel-after.jpg";
+import interiorAfter2 from "@/assets/interior-remodel-after2.jpg";
 import tilesAfter1 from "@/assets/tiles-after-1.jpg";
 import kitchenAfter1 from "@/assets/kitchen-after1.jpg";
 import kitchenAfter2 from "@/assets/kitchen-after2.jpg";
@@ -120,6 +121,14 @@ const projects = [
     category: "Interior",
     description: "Stunning entryway renovation featuring elegant wainscoting panels, large format porcelain tiles, black interior doors, carpeted staircase with black railing, and modern French door.",
     image: interiorAfter,
+  },
+  {
+    id: 14,
+    title: "Contemporary Interior Remodel",
+    location: "Vaughan, ON",
+    category: "Interior",
+    description: "Complete interior transformation featuring open-concept design, premium flooring, and custom finishes throughout for a modern luxury feel.",
+    image: interiorAfter2,
   },
   {
     id: 13,

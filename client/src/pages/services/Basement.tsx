@@ -4,8 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
 import { CheckCircle, Phone, ArrowRight } from "lucide-react";
-import interiorAfter1 from "@/assets/interior-remodel-after-1.jpg";
-import interiorAfter2 from "@/assets/interior-remodel-after-2.jpg";
+import roomAfterV2 from "@/assets/room-after-v2.jpg";
+import basementHero from "@/assets/stock_images/modern_luxurious_fin_89dcc6f0.jpg";
 
 const benefits = [
   "Complete basement finishing from start to end",
@@ -52,8 +52,8 @@ export default function Basement() {
       <section className="relative py-24 bg-gradient-to-br from-diamond-900 via-diamond-800 to-diamond-900">
         <div className="absolute inset-0">
           <img
-            src={interiorAfter1}
-            alt="Basement renovation in Brampton"
+            src={basementHero}
+            alt="Luxurious finished basement renovation with custom lighting and modern finishes"
             className="w-full h-full object-cover opacity-20"
           />
         </div>
@@ -106,8 +106,8 @@ export default function Basement() {
             </div>
             <div>
               <img
-                src={interiorAfter2}
-                alt="Finished basement living space"
+                src={roomAfterV2}
+                alt="Professional basement renovation project by Diamond Luxury Renovations"
                 className="rounded-2xl shadow-xl w-full h-96 object-cover"
               />
             </div>

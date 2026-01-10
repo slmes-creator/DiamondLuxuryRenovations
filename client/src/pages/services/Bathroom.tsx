@@ -5,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Link } from "wouter";
 import { CheckCircle, Phone, ArrowRight } from "lucide-react";
 import bathroomAfter1 from "@/assets/bathroom-after-1.jpg";
-import bathroomAfter2 from "@/assets/bathroom-after-2.jpg";
+import bathroomAfter6V2 from "@/assets/bathroom-after6-v2.jpg";
 
 const benefits = [
   "Complete bathroom remodels from design to finish",
@@ -106,8 +106,8 @@ export default function Bathroom() {
             </div>
             <div>
               <img
-                src={bathroomAfter2}
-                alt="Modern bathroom design"
+                src={bathroomAfter6V2}
+                alt="High-end marble shower renovation by Diamond Luxury Renovations"
                 className="rounded-2xl shadow-xl w-full h-96 object-cover"
               />
             </div>
