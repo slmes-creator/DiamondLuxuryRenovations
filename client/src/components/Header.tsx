@@ -2,6 +2,7 @@ import { Star, Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import logoImg from "@/assets/logo.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -21,16 +22,23 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <div className="flex items-center space-x-4 cursor-pointer">
-              <div className="w-12 h-12 bg-gradient-to-br from-luxury-400 to-luxury-600 rounded-xl flex items-center justify-center shadow-lg">
-                <Star className="w-8 h-8 text-white fill-current" />
+            <div className="flex items-center space-x-4 cursor-pointer group">
+              <div className="relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-luxury-400 to-luxury-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                <div className="relative w-14 h-14 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-inner overflow-hidden border border-white/20">
+                  <img 
+                    src={logoImg} 
+                    alt="Diamond Luxury Renovations" 
+                    className="w-full h-full object-contain p-1 transform group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
               </div>
               <div>
-                <h1 className="text-xl md:text-2xl font-bold text-white tracking-wide" data-testid="text-company-name">
-                  Diamond Luxury Renovation
+                <h1 className="text-xl md:text-2xl font-bold text-white tracking-wide leading-none" data-testid="text-company-name">
+                  Diamond Luxury
                 </h1>
-                <p className="text-luxury-300 font-medium tracking-wider text-xs uppercase hidden sm:block">
-                  Premium General Contractor
+                <p className="text-luxury-400 font-bold tracking-[0.2em] text-[10px] uppercase mt-1">
+                  Renovations
                 </p>
               </div>
             </div>

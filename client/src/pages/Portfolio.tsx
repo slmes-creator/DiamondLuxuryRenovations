@@ -17,7 +17,7 @@ const projects = [
   {
     id: 1,
     title: "Staircase Refinishing & Railing Update",
-    location: "Mississauga, ON",
+    location: "Brampton, ON",
     category: "Staircase",
     description: "Complete staircase transformation with new oak treads, modern railings, and premium finish.",
     beforeImage: staircaseBefore1,
@@ -26,7 +26,7 @@ const projects = [
   {
     id: 2,
     title: "Luxury Bathroom Renovation",
-    location: "Vaughan, ON",
+    location: "Brampton, ON",
     category: "Bathroom",
     description: "Full master bathroom remodel featuring heated floors, walk-in shower, and custom vanity.",
     beforeImage: bathroomBefore1,
@@ -43,8 +43,8 @@ const projects = [
   },
   {
     id: 4,
-    title: "Kitchen Tile Backsplash & Flooring",
-    location: "Caledon, ON",
+    title: "Tile Backsplash & Flooring",
+    location: "Brampton, ON",
     category: "Tiles",
     description: "Beautiful tile installation featuring subway tile backsplash and modern floor tiles.",
     beforeImage: tilesBefore1,

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Phone, Mail, Clock, MapPin, Facebook, Instagram, Linkedin, Star } from "lucide-react";
+import logoImg from "@/assets/logo.png";
 
 const serviceAreas = [
   { name: "Brampton", slug: "brampton" },
@@ -33,10 +34,10 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-luxury-400 to-luxury-600 rounded-lg flex items-center justify-center">
-                <Star className="w-6 h-6 text-white fill-current" />
+              <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center p-1 overflow-hidden border border-white/10">
+                <img src={logoImg} alt="Logo" className="w-full h-full object-contain" />
               </div>
-              <span className="text-xl font-bold">Diamond Luxury Renovation</span>
+              <span className="text-xl font-bold">Diamond Luxury Renovations</span>
             </div>
             <p className="text-gray-400 mb-6">
               Premium general contractor serving Brampton and the Greater Toronto Area. 
