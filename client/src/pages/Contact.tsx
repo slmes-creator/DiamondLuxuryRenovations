@@ -4,7 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, FormDescription } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -12,34 +13,102 @@ import { Phone, Mail, Clock, MapPin, Send, CheckCircle } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
+const slugify = (str: string) => str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email"),
   phone: z.string().min(10, "Please enter a valid phone number"),
-  service: z.string().min(1, "Please select a service"),
-  message: z.string().min(10, "Please provide more details about your project"),
+  location: z.string().min(1, "Please select a location"),
+  locationOther: z.string().optional(),
+  propertyType: z.string().min(1, "Please select a property type"),
+  timeline: z.string().min(1, "Please select a timeline"),
+  budget: z.string().min(1, "Please select a budget range"),
+  primaryGoal: z.string().min(1, "Please select your primary goal"),
+  primaryGoalOther: z.string().optional(),
+  followUp: z.string().min(1, "Please select how you'd like us to follow up"),
+  message: z.string().optional(),
+}).refine((data) => {
+  if (data.location === "Other" && (!data.locationOther || data.locationOther.trim() === "")) {
+    return false;
+  }
+  return true;
+}, {
+  message: "Please enter your city",
+  path: ["locationOther"],
+}).refine((data) => {
+  if (data.primaryGoal === "Other" && (!data.primaryGoalOther || data.primaryGoalOther.trim() === "")) {
+    return false;
+  }
+  return true;
+}, {
+  message: "Please tell us your main goal",
+  path: ["primaryGoalOther"],
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-const services = [
-  "Flooring Installation",
-  "Staircase Refinishing",
-  "Framing",
-  "Bathroom Renovation",
-  "Basement Renovation",
-  "Other",
-];
-
-const serviceAreas = [
+const locations = [
   "Brampton",
-  "Mississauga", 
+  "Mississauga",
   "Vaughan",
   "Caledon",
   "Toronto",
-  "Etobicoke",
+  "Other",
+];
+
+const propertyTypes = [
+  "Detached home",
+  "Semi-detached",
+  "Townhouse",
+  "Condo",
+  "Rental / investment property",
+];
+
+const timelines = [
+  "Immediately (0–30 days)",
+  "1–3 months",
+  "3–6 months",
+  "Just researching",
+];
+
+const budgetRanges = [
+  "Under $5,000",
+  "$5,000–$10,000",
+  "$10,000–$25,000",
+  "$25,000+",
+  "Not sure yet",
+];
+
+const primaryGoals = [
+  "Increase home value",
+  "Update an outdated space",
+  "Fix poor workmanship",
+  "Improve functionality",
+  "Preparing to sell",
+  "Other",
+];
+
+const followUpOptions = [
+  "Call me",
+  "Text me first",
+  "Not right now",
+];
+
+const gtaServiceAreas = [
+  "Toronto",
+  "Brampton",
+  "Mississauga",
+  "Vaughan",
+  "Caledon",
+  "Markham",
+  "Richmond Hill",
   "Oakville",
   "Burlington",
+  "Pickering",
+  "Ajax",
+  "Whitby",
+  "Oshawa",
 ];
 
 export default function Contact() {
@@ -52,13 +121,26 @@ export default function Contact() {
       name: "",
       email: "",
       phone: "",
-      service: "",
+      location: "",
+      locationOther: "",
+      propertyType: "",
+      timeline: "",
+      budget: "",
+      primaryGoal: "",
+      primaryGoalOther: "",
+      followUp: "",
       message: "",
     },
   });
 
+  const watchLocation = form.watch("location");
+  const watchPrimaryGoal = form.watch("primaryGoal");
+
   const onSubmit = async (data: ContactFormData) => {
     try {
+      const locationFinal = data.location === "Other" ? data.locationOther : data.location;
+      const goalFinal = data.primaryGoal === "Other" ? data.primaryGoalOther : data.primaryGoal;
+      
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
@@ -70,9 +152,14 @@ export default function Contact() {
           name: data.name,
           email: data.email,
           phone: data.phone,
-          service: data.service,
-          message: data.message,
-          subject: `New Estimate Request from ${data.name} - ${data.service}`,
+          location: locationFinal,
+          property_type: data.propertyType,
+          timeline: data.timeline,
+          budget: data.budget,
+          primary_goal: goalFinal,
+          follow_up_preference: data.followUp,
+          additional_details: data.message || "None provided",
+          subject: `New Lead: ${data.name} - ${data.propertyType} in ${locationFinal}`,
           from_name: "Diamond Luxury Renovations Website",
         }),
       });
@@ -101,8 +188,8 @@ export default function Contact() {
 
   return (
     <Layout
-      title="Contact Us | Diamond Luxury Renovation - Free Estimate Brampton"
-      description="Get a free renovation estimate from Diamond Luxury Renovation. Serving Brampton, Mississauga, Vaughan, Caledon, and the GTA. Call (416) 414-9170."
+      title="Contact Us | Diamond Luxury Renovation - Free Estimate GTA"
+      description="Get a free renovation estimate from Diamond Luxury Renovation. Serving the Greater Toronto Area including Brampton, Mississauga, Vaughan, Toronto, and more. Call (416) 414-9170."
     >
       <section className="py-20 bg-gradient-to-br from-diamond-900 via-diamond-800 to-diamond-900">
         <div className="max-w-7xl mx-auto px-6 text-center">
@@ -110,8 +197,8 @@ export default function Contact() {
             Get Your Free Estimate
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to start your renovation project? Contact us today for a free, 
-            no-obligation consultation and detailed estimate.
+            Ready to start your renovation project? Tell us about your project 
+            and we'll provide a detailed, no-obligation estimate.
           </p>
         </div>
       </section>
@@ -132,13 +219,15 @@ export default function Contact() {
                         Your request has been submitted. Our team will contact you within 24 hours 
                         with your free estimate.
                       </p>
-                      <Button onClick={() => setIsSubmitted(false)}>Submit Another Request</Button>
+                      <Button onClick={() => setIsSubmitted(false)} data-testid="button-submit-another">
+                        Submit Another Request
+                      </Button>
                     </div>
                   ) : (
                     <>
                       <h2 className="text-2xl font-bold text-diamond-900 mb-6">Request a Free Estimate</h2>
                       <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                           <div className="grid md:grid-cols-2 gap-6">
                             <FormField
                               control={form.control}
@@ -168,36 +257,37 @@ export default function Contact() {
                             />
                           </div>
                           
-                          <div className="grid md:grid-cols-2 gap-6">
+                          <FormField
+                            control={form.control}
+                            name="email"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Email Address</FormLabel>
+                                <FormControl>
+                                  <Input type="email" placeholder="john@example.com" {...field} data-testid="input-email" />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+
+                          <div className="border-t pt-6">
                             <FormField
                               control={form.control}
-                              name="email"
+                              name="location"
                               render={({ field }) => (
                                 <FormItem>
-                                  <FormLabel>Email Address</FormLabel>
-                                  <FormControl>
-                                    <Input type="email" placeholder="john@example.com" {...field} data-testid="input-email" />
-                                  </FormControl>
-                                  <FormMessage />
-                                </FormItem>
-                              )}
-                            />
-                            <FormField
-                              control={form.control}
-                              name="service"
-                              render={({ field }) => (
-                                <FormItem>
-                                  <FormLabel>Service Needed</FormLabel>
+                                  <FormLabel>What city is the property located in?</FormLabel>
                                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
-                                      <SelectTrigger data-testid="select-service">
-                                        <SelectValue placeholder="Select a service" />
+                                      <SelectTrigger data-testid="select-location">
+                                        <SelectValue placeholder="Select a city" />
                                       </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
-                                      {services.map((service) => (
-                                        <SelectItem key={service} value={service}>
-                                          {service}
+                                      {locations.map((loc) => (
+                                        <SelectItem key={loc} value={loc}>
+                                          {loc}
                                         </SelectItem>
                                       ))}
                                     </SelectContent>
@@ -206,18 +296,184 @@ export default function Contact() {
                                 </FormItem>
                               )}
                             />
+                            {watchLocation === "Other" && (
+                              <FormField
+                                control={form.control}
+                                name="locationOther"
+                                render={({ field }) => (
+                                  <FormItem className="mt-3">
+                                    <FormControl>
+                                      <Input placeholder="Enter your city" {...field} data-testid="input-location-other" />
+                                    </FormControl>
+                                    <FormMessage />
+                                  </FormItem>
+                                )}
+                              />
+                            )}
                           </div>
-                          
+
+                          <FormField
+                            control={form.control}
+                            name="propertyType"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>What type of property is this?</FormLabel>
+                                <FormControl>
+                                  <RadioGroup
+                                    onValueChange={field.onChange}
+                                    defaultValue={field.value}
+                                    className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2"
+                                  >
+                                    {propertyTypes.map((type) => (
+                                      <div key={type} className="flex items-center space-x-2">
+                                        <RadioGroupItem value={type} id={`property-${slugify(type)}`} data-testid={`radio-property-${slugify(type)}`} />
+                                        <label htmlFor={`property-${slugify(type)}`} className="text-sm font-medium cursor-pointer">
+                                          {type}
+                                        </label>
+                                      </div>
+                                    ))}
+                                  </RadioGroup>
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+
+                          <FormField
+                            control={form.control}
+                            name="timeline"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>When are you hoping to start this project?</FormLabel>
+                                <FormControl>
+                                  <RadioGroup
+                                    onValueChange={field.onChange}
+                                    defaultValue={field.value}
+                                    className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2"
+                                  >
+                                    {timelines.map((time) => (
+                                      <div key={time} className="flex items-center space-x-2">
+                                        <RadioGroupItem value={time} id={`timeline-${slugify(time)}`} data-testid={`radio-timeline-${slugify(time)}`} />
+                                        <label htmlFor={`timeline-${slugify(time)}`} className="text-sm font-medium cursor-pointer">
+                                          {time}
+                                        </label>
+                                      </div>
+                                    ))}
+                                  </RadioGroup>
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+
+                          <FormField
+                            control={form.control}
+                            name="budget"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Where do you see your project budget landing?</FormLabel>
+                                <FormDescription className="text-sm text-gray-500">
+                                  To make sure we're a good fit and respect your time...
+                                </FormDescription>
+                                <FormControl>
+                                  <RadioGroup
+                                    onValueChange={field.onChange}
+                                    defaultValue={field.value}
+                                    className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2"
+                                  >
+                                    {budgetRanges.map((range) => (
+                                      <div key={range} className="flex items-center space-x-2">
+                                        <RadioGroupItem value={range} id={`budget-${slugify(range)}`} data-testid={`radio-budget-${slugify(range)}`} />
+                                        <label htmlFor={`budget-${slugify(range)}`} className="text-sm font-medium cursor-pointer">
+                                          {range}
+                                        </label>
+                                      </div>
+                                    ))}
+                                  </RadioGroup>
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+
+                          <FormField
+                            control={form.control}
+                            name="primaryGoal"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>What's the main reason you're considering this renovation?</FormLabel>
+                                <FormControl>
+                                  <RadioGroup
+                                    onValueChange={field.onChange}
+                                    defaultValue={field.value}
+                                    className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2"
+                                  >
+                                    {primaryGoals.map((goal) => (
+                                      <div key={goal} className="flex items-center space-x-2">
+                                        <RadioGroupItem value={goal} id={`goal-${slugify(goal)}`} data-testid={`radio-goal-${slugify(goal)}`} />
+                                        <label htmlFor={`goal-${slugify(goal)}`} className="text-sm font-medium cursor-pointer">
+                                          {goal}
+                                        </label>
+                                      </div>
+                                    ))}
+                                  </RadioGroup>
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                          {watchPrimaryGoal === "Other" && (
+                            <FormField
+                              control={form.control}
+                              name="primaryGoalOther"
+                              render={({ field }) => (
+                                <FormItem className="-mt-4">
+                                  <FormControl>
+                                    <Input placeholder="Tell us your main goal" {...field} data-testid="input-goal-other" />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          )}
+
+                          <FormField
+                            control={form.control}
+                            name="followUp"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>If this looks like a good fit, how would you prefer we follow up?</FormLabel>
+                                <FormControl>
+                                  <RadioGroup
+                                    onValueChange={field.onChange}
+                                    defaultValue={field.value}
+                                    className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-2"
+                                  >
+                                    {followUpOptions.map((option) => (
+                                      <div key={option} className="flex items-center space-x-2">
+                                        <RadioGroupItem value={option} id={`followup-${slugify(option)}`} data-testid={`radio-followup-${slugify(option)}`} />
+                                        <label htmlFor={`followup-${slugify(option)}`} className="text-sm font-medium cursor-pointer">
+                                          {option}
+                                        </label>
+                                      </div>
+                                    ))}
+                                  </RadioGroup>
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+
                           <FormField
                             control={form.control}
                             name="message"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel>Project Details</FormLabel>
+                                <FormLabel>Additional Details (Optional)</FormLabel>
                                 <FormControl>
                                   <Textarea 
-                                    placeholder="Tell us about your renovation project..." 
-                                    className="min-h-[120px]"
+                                    placeholder="Any other details you'd like to share about your project..." 
+                                    className="min-h-[100px]"
                                     {...field} 
                                     data-testid="textarea-message"
                                   />
@@ -284,20 +540,6 @@ export default function Contact() {
                 </CardContent>
               </Card>
               
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-diamond-900 mb-4">Service Areas</h3>
-                  <div className="grid grid-cols-2 gap-2">
-                    {serviceAreas.map((area) => (
-                      <div key={area} className="flex items-center space-x-2">
-                        <MapPin className="w-4 h-4 text-luxury-600" />
-                        <span className="text-gray-700">{area}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-              
               <Card className="bg-diamond-900">
                 <CardContent className="p-6 text-center">
                   <h3 className="text-xl font-bold text-white mb-2">Need Immediate Help?</h3>
@@ -308,6 +550,7 @@ export default function Contact() {
                     <Button 
                       size="lg" 
                       className="w-full bg-gradient-to-r from-luxury-500 to-luxury-600 text-diamond-900 font-semibold"
+                      data-testid="button-call-now"
                     >
                       <Phone className="w-5 h-5 mr-2" />
                       Call Now
@@ -322,10 +565,31 @@ export default function Contact() {
 
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-bold text-diamond-900 text-center mb-8">Our Service Area</h2>
-          <div className="bg-gray-200 rounded-2xl h-96 flex items-center justify-center">
-            <p className="text-gray-500">Map of Greater Toronto Area service region</p>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-diamond-900 mb-4">
+              Serving the Greater Toronto Area (GTA)
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Diamond Luxury Renovations proudly serves homeowners across the Greater Toronto Area. 
+              From downtown Toronto to the surrounding suburbs, we bring quality craftsmanship to your doorstep.
+            </p>
           </div>
+          
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {gtaServiceAreas.map((area) => (
+              <div 
+                key={area} 
+                className="flex items-center space-x-2 bg-gray-50 rounded-lg p-3 border border-gray-100"
+              >
+                <MapPin className="w-4 h-4 text-luxury-600 flex-shrink-0" />
+                <span className="text-diamond-900 font-medium text-sm">{area}</span>
+              </div>
+            ))}
+          </div>
+          
+          <p className="text-center text-gray-500 text-sm mt-8">
+            Don't see your city? Contact us — we may still be able to serve your area.
+          </p>
         </div>
       </section>
     </Layout>
