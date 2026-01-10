@@ -46,15 +46,15 @@ export default function Footer() {
             <div className="space-y-3 text-gray-300">
               <a href="tel:4164149170" className="flex items-center space-x-2 hover:text-luxury-400">
                 <Phone className="w-4 h-4" />
-                <span>(416) 414-9170</span>
+                <span className="text-sm truncate">(416) 414-9170</span>
               </a>
               <a href="mailto:diamondluxuryrenovations@gmail.com" className="flex items-center space-x-2 hover:text-luxury-400 min-w-0">
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                <span className="text-sm truncate">diamondluxuryrenovations@gmail.com</span>
+                <span className="text-xs truncate">diamondluxuryrenovations@gmail.com</span>
               </a>
               <div className="flex items-center space-x-2">
                 <Clock className="w-4 h-4" />
-                <span>Mon-Fri: 7AM-6PM, Sat: 8AM-4PM</span>
+                <span className="text-sm truncate">Mon-Sun: 6AM-11PM</span>
               </div>
             </div>
           </div>
