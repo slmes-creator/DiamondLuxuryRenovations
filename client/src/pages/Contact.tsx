@@ -96,19 +96,15 @@ const followUpOptions = [
 ];
 
 const gtaServiceAreas = [
-  "Toronto",
   "Brampton",
   "Mississauga",
   "Vaughan",
   "Caledon",
-  "Markham",
-  "Richmond Hill",
+  "Toronto",
+  "Etobicoke",
+  "Milton",
   "Oakville",
-  "Burlington",
-  "Pickering",
-  "Ajax",
-  "Whitby",
-  "Oshawa",
+  "Georgetown",
 ];
 
 export default function Contact() {
@@ -558,52 +554,41 @@ export default function Contact() {
                   </a>
                 </CardContent>
               </Card>
+
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-diamond-900 mb-4">Service Areas</h3>
+                  <div className="grid grid-cols-2 gap-2 mb-4">
+                    {gtaServiceAreas.map((area) => (
+                      <div 
+                        key={area} 
+                        className="flex items-center space-x-2"
+                      >
+                        <MapPin className="w-3 h-3 text-luxury-600 flex-shrink-0" />
+                        <span className="text-diamond-900 text-sm">{area}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="rounded-lg overflow-hidden border border-gray-200">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d184538.1505437756!2d-79.87306732968749!3d43.7315479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b15eaa5d05abf%3A0x352d31667cc38677!2sBrampton%2C%20ON%2C%20Canada!5e0!3m2!1sen!2sus!4v1704900000000!5m2!1sen!2sus"
+                      width="100%"
+                      height="200"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Diamond Luxury Renovations Service Area"
+                      data-testid="map-gta"
+                    />
+                  </div>
+                  <p className="text-gray-500 text-xs mt-3 text-center">
+                    Don't see your city? Contact us!
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-diamond-900 mb-4">
-              Serving the Greater Toronto Area (GTA)
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Diamond Luxury Renovations proudly serves homeowners across the Greater Toronto Area. 
-              From downtown Toronto to the surrounding suburbs, we bring quality craftsmanship to your doorstep.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-10">
-            {gtaServiceAreas.map((area) => (
-              <div 
-                key={area} 
-                className="flex items-center space-x-2 bg-gray-50 rounded-lg p-3 border border-gray-100"
-              >
-                <MapPin className="w-4 h-4 text-luxury-600 flex-shrink-0" />
-                <span className="text-diamond-900 font-medium text-sm">{area}</span>
-              </div>
-            ))}
-          </div>
-          
-          <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d369076.52073498!2d-79.74931739999999!3d43.7181557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb90d7c63ba5%3A0x323555502ab4c477!2sToronto%2C%20ON%2C%20Canada!5e0!3m2!1sen!2sus!4v1704900000000!5m2!1sen!2sus"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Diamond Luxury Renovations Service Area - Greater Toronto Area"
-              data-testid="map-gta"
-            />
-          </div>
-          
-          <p className="text-center text-gray-500 text-sm mt-8">
-            Don't see your city? Contact us — we may still be able to serve your area.
-          </p>
         </div>
       </section>
     </Layout>
