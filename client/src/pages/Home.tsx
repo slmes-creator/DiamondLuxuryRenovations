@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <Layout
       title="Premium General Contractor in Brampton | Diamond Luxury Renovation"
-      description="Discover Brampton's trusted luxury contractor for flooring, staircases, framing, bathrooms, and basements. 5-star rated with 35+ reviews."
+      description="Discover Brampton's trusted luxury contractor for flooring, staircases, framing, bathrooms, and basements. 5-star rated."
     >
       <SchemaMarkup />
       <Hero />

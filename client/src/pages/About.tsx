@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Shield, Award, Clock, Users, CheckCircle, MapPin, Phone } from "lucide-react";
+import houseImg from "@/assets/house.jpg";
 
 const values = [
   {
@@ -47,7 +48,7 @@ export default function About() {
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Brampton's premier general contractor, dedicated to transforming homes with 
-            exceptional craftsmanship and uncompromising quality since 2009.
+            exceptional craftsmanship and uncompromising quality since 2023.
           </p>
         </div>
       </section>
@@ -75,7 +76,7 @@ export default function About() {
             </div>
             <div className="bg-gray-100 rounded-3xl p-8">
               <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2940&auto=format&fit=crop"
+                src={houseImg}
                 alt="Diamond Luxury Renovation team at work"
                 className="rounded-2xl shadow-lg w-full h-80 object-cover"
               />

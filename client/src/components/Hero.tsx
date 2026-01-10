@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import flooringAfter4 from "@/assets/flooring-after-4.jpg";
 
 interface HeroProps {
   onViewGallery?: () => void;
@@ -21,7 +22,7 @@ export default function Hero({ onViewGallery }: HeroProps) {
     <section 
       className="min-h-screen flex items-center justify-center text-center text-white relative overflow-hidden"
       style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop')`,
+        backgroundImage: `url(${flooringAfter4})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}

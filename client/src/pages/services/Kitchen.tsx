@@ -5,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Link } from "wouter";
 import { CheckCircle, Phone, ArrowRight } from "lucide-react";
 import kitchenAfter from "@/assets/kitchen-after.jpg";
-import kitchenAfter1 from "@/assets/kitchen-after-1.jpg";
+import kitchenAfter1 from "@/assets/kitchen-after1.jpg";
 
 const benefits = [
   "Custom cabinet design and installation",

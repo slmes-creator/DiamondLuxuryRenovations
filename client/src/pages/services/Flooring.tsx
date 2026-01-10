@@ -4,8 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
 import { CheckCircle, Phone, ArrowRight } from "lucide-react";
-import flooringAfter1 from "@/assets/flooring-after-1.jpg";
-import flooringAfter2 from "@/assets/flooring-after-2.jpg";
+import flooringAfter5 from "@/assets/flooring-after-5.jpg";
+import flooringAfter11 from "@/assets/flooring-after11.jpg";
 
 const benefits = [
   "Premium hardwood, laminate, and vinyl flooring options",
@@ -73,7 +73,7 @@ export default function Flooring() {
       <section className="relative py-24 bg-gradient-to-br from-diamond-900 via-diamond-800 to-diamond-900">
         <div className="absolute inset-0">
           <img
-            src={flooringAfter1}
+            src={flooringAfter5}
             alt="Premium flooring installation in Brampton"
             className="w-full h-full object-cover opacity-20"
           />
@@ -136,7 +136,7 @@ export default function Flooring() {
             </div>
             <div>
               <img
-                src={flooringAfter2}
+                src={flooringAfter11}
                 alt="Hardwood flooring installation in Brampton home"
                 className="rounded-2xl shadow-xl w-full h-96 object-cover"
               />

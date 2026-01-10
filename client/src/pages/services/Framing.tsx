@@ -52,7 +52,7 @@ export default function Framing() {
       <section className="relative py-24 bg-gradient-to-br from-diamond-900 via-diamond-800 to-diamond-900">
         <div className="absolute inset-0">
           <img
-            src={framingImg}
+            src={framing2Img}
             alt="Professional framing services in Brampton"
             className="w-full h-full object-cover opacity-20"
           />
@@ -106,7 +106,7 @@ export default function Framing() {
             </div>
             <div>
               <img
-                src={framing2Img}
+                src={framingImg}
                 alt="Professional framing construction"
                 className="rounded-2xl shadow-xl w-full h-96 object-cover"
               />

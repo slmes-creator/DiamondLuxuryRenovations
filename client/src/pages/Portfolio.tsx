@@ -4,8 +4,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { MapPin, ArrowRight } from "lucide-react";
 
-import flooringBefore1 from "@/assets/flooring-before-1.jpg";
-import flooringAfter1 from "@/assets/flooring-after-1.jpg";
 import staircaseBefore1 from "@/assets/staircase-before-1.jpg";
 import staircaseAfter1 from "@/assets/staircase-after-1.jpg";
 import bathroomBefore1 from "@/assets/bathroom-before1.jpg";
@@ -14,21 +12,10 @@ import interiorBefore1 from "@/assets/interior-remodel-before-1.jpg";
 import interiorAfter1 from "@/assets/interior-remodel-after-1.jpg";
 import tilesBefore1 from "@/assets/tiles-before-1.jpg";
 import tilesAfter1 from "@/assets/tiles-after-1.jpg";
-import kitchenBefore1 from "@/assets/kitchen-before-1.jpg";
-import kitchenAfter1 from "@/assets/kitchen-after-1.jpg";
 
 const projects = [
   {
     id: 1,
-    title: "Modern Hardwood Flooring Installation",
-    location: "Brampton, ON",
-    category: "Flooring",
-    description: "Complete transformation of a 2,500 sq ft home with premium engineered hardwood flooring.",
-    beforeImage: flooringBefore1,
-    afterImage: flooringAfter1,
-  },
-  {
-    id: 2,
     title: "Staircase Refinishing & Railing Update",
     location: "Mississauga, ON",
     category: "Staircase",
@@ -37,7 +24,7 @@ const projects = [
     afterImage: staircaseAfter1,
   },
   {
-    id: 3,
+    id: 2,
     title: "Luxury Bathroom Renovation",
     location: "Vaughan, ON",
     category: "Bathroom",
@@ -46,7 +33,7 @@ const projects = [
     afterImage: bathroomAfter1,
   },
   {
-    id: 4,
+    id: 3,
     title: "Complete Interior Remodel",
     location: "Brampton, ON",
     category: "Interior",
@@ -55,22 +42,13 @@ const projects = [
     afterImage: interiorAfter1,
   },
   {
-    id: 5,
+    id: 4,
     title: "Kitchen Tile Backsplash & Flooring",
     location: "Caledon, ON",
     category: "Tiles",
     description: "Beautiful tile installation featuring subway tile backsplash and modern floor tiles.",
     beforeImage: tilesBefore1,
     afterImage: tilesAfter1,
-  },
-  {
-    id: 6,
-    title: "Kitchen Renovation",
-    location: "Toronto, ON",
-    category: "Kitchen",
-    description: "Complete kitchen upgrade with new countertops, flooring, and modern fixtures.",
-    beforeImage: kitchenBefore1,
-    afterImage: kitchenAfter1,
   },
 ];
 
