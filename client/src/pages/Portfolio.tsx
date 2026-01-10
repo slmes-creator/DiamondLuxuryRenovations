@@ -22,25 +22,9 @@ import tilesAfter1 from "@/assets/tiles-after-1.jpg";
 import kitchenAfter1 from "@/assets/kitchen-after1.jpg";
 import kitchenAfter2 from "@/assets/kitchen-after2.jpg";
 
-const categories = ["All", "Kitchen", "Bathroom", "Flooring", "Staircase", "Interior", "Tiles"];
+const categories = ["All", "Bathroom", "Flooring", "Staircase", "Interior", "Kitchen", "Tiles"];
 
 const projects = [
-  {
-    id: 1,
-    title: "Premium Kitchen Transformation",
-    location: "Brampton, ON",
-    category: "Kitchen",
-    description: "High-end kitchen renovation featuring modern cabinetry, premium finishes, and integrated lighting for a sophisticated culinary space.",
-    image: kitchenAfter1,
-  },
-  {
-    id: 2,
-    title: "Luxury Kitchen Remodel",
-    location: "Mississauga, ON",
-    category: "Kitchen",
-    description: "Premium kitchen renovation with dark wood cabinetry, integrated lighting, and a modern open-concept layout perfect for entertaining.",
-    image: kitchenAfter2,
-  },
   {
     id: 3,
     title: "Luxury Marble Shower Suite",
@@ -72,6 +56,22 @@ const projects = [
     category: "Flooring",
     description: "Beautiful wide-plank dark oak hardwood installation with rich wood grain patterns, professional trim work, and immaculate finishing throughout.",
     image: flooringAfter5,
+  },
+  {
+    id: 1,
+    title: "Premium Kitchen Transformation",
+    location: "Brampton, ON",
+    category: "Kitchen",
+    description: "High-end kitchen renovation featuring modern cabinetry, premium finishes, and integrated lighting for a sophisticated culinary space.",
+    image: kitchenAfter1,
+  },
+  {
+    id: 2,
+    title: "Luxury Kitchen Remodel",
+    location: "Mississauga, ON",
+    category: "Kitchen",
+    description: "Premium kitchen renovation with dark wood cabinetry, integrated lighting, and a modern open-concept layout perfect for entertaining.",
+    image: kitchenAfter2,
   },
   {
     id: 7,
