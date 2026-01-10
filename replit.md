@@ -4,6 +4,13 @@
 Multi-page responsive website for Diamond Luxury Renovation, a premium general contractor in Brampton, Ontario. Built with React, TailwindCSS, and a dark navy + gold luxury color palette.
 
 ## Recent Changes
+- January 2025: Portfolio page redesigned with curated gallery of best "After" images only
+  - Added category filtering (Bathroom, Flooring, Staircase, Interior, Tiles)
+  - Responsive grid layout (3 columns desktop, 2 tablet, 1 mobile)
+  - Hover effects with description overlays
+  - Curated 11 high-quality projects from attached assets
+  - Excluded images with construction debris, unfinished work, or clutter
+- January 2025: Updated company logo in header and footer with official branding
 - January 2025: Initial multi-page website build with all core pages, service pages, service area pages, and legal pages
 
 ## Project Architecture
@@ -25,7 +32,7 @@ client/src/
 │   ├── Home.tsx              # Homepage with hero, trust badges, services preview
 │   ├── About.tsx             # Company story, values, certifications
 │   ├── ServicesOverview.tsx  # Grid of all services
-│   ├── Portfolio.tsx         # Before/after galleries
+│   ├── Portfolio.tsx         # Curated gallery with category filters (11 projects)
 │   ├── Testimonials.tsx      # Customer reviews with schema
 │   ├── Blog.tsx              # Renovation tips and guides
 │   ├── Contact.tsx           # Lead capture form
