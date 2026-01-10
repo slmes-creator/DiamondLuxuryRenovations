@@ -1,4 +1,4 @@
-import flooringAfter from "@/assets/flooring-after-1.jpg";
+import flooringAfter from "@/assets/flooring-after-4.jpg";
 import tilesAfter from "@/assets/tiles-after-1.jpg";
 import staircaseAfter from "@/assets/staircase-after-1.jpg";
 import bathroomAfter from "@/assets/bathroom-after-1.jpg";
