@@ -37,3 +37,8 @@ author = "agent"
 task = "shell.exec"
 args = "npm run dev"
 waitForPort = 5000
+
+[userenv]
+
+[userenv.shared]
+VITE_WEB3FORMS_ACCESS_KEY = "529073a8-8f92-4589-b645-bd2b52e4f01f"
