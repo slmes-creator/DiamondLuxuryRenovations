@@ -58,12 +58,45 @@ export default function Contact() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    console.log("Form submitted:", data);
-    setIsSubmitted(true);
-    toast({
-      title: "Request Submitted!",
-      description: "We'll contact you within 24 hours with your free estimate.",
-    });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          service: data.service,
+          message: data.message,
+          subject: `New Estimate Request from ${data.name} - ${data.service}`,
+          from_name: "Diamond Luxury Renovations Website",
+        }),
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        setIsSubmitted(true);
+        toast({
+          title: "Request Submitted!",
+          description: "We'll contact you within 24 hours with your free estimate.",
+        });
+        form.reset();
+      } else {
+        throw new Error(result.message || "Form submission failed");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Submission Failed",
+        description: "Please try again or call us directly at (416) 414-9170.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -227,13 +260,13 @@ export default function Contact() {
                       </div>
                     </a>
                     
-                    <a href="mailto:diamondluxuryrenovations@gmail.com" className="flex items-start space-x-3 group">
+                    <a href="mailto:diamondluxuryrenovations@gmail.com" className="flex items-start space-x-3 group min-w-0">
                       <div className="w-10 h-10 bg-luxury-100 rounded-lg flex items-center justify-center flex-shrink-0">
                         <Mail className="w-5 h-5 text-luxury-600" />
                       </div>
-                      <div>
+                      <div className="min-w-0 flex-1">
                         <p className="text-sm text-gray-500">Email Us</p>
-                        <p className="font-semibold text-diamond-900 group-hover:text-luxury-600 break-all">diamondluxuryrenovations@gmail.com</p>
+                        <p className="font-semibold text-diamond-900 group-hover:text-luxury-600 text-sm truncate">diamondluxuryrenovations@gmail.com</p>
                       </div>
                     </a>
                     
