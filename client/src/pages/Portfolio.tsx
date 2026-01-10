@@ -27,10 +27,10 @@ const categories = ["All", "Kitchen", "Bathroom", "Flooring", "Staircase", "Inte
 const projects = [
   {
     id: 1,
-    title: "Modern Chef's Kitchen",
+    title: "Premium Kitchen Transformation",
     location: "Brampton, ON",
     category: "Kitchen",
-    description: "Complete kitchen overhaul featuring custom white cabinetry, high-end stainless steel appliances, and a beautiful subway tile backsplash.",
+    description: "High-end kitchen renovation featuring modern cabinetry, premium finishes, and integrated lighting for a sophisticated culinary space.",
     image: kitchenAfter1,
   },
   {
