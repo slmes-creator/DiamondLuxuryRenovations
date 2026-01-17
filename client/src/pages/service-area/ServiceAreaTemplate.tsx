@@ -74,6 +74,10 @@ export default function ServiceAreaTemplate({ city, neighborhoods }: ServiceArea
               <ul className="space-y-3">
                 <li className="flex items-center space-x-3">
                   <CheckCircle className="w-6 h-6 text-green-600" />
+                  <span className="text-gray-700">10+ Years in Business</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckCircle className="w-6 h-6 text-green-600" />
                   <span className="text-gray-700">WSIB Covered</span>
                 </li>
                 <li className="flex items-center space-x-3">

@@ -9,6 +9,7 @@ const serviceAreas = [
   { name: "Vaughan", slug: "vaughan" },
   { name: "Caledon", slug: "caledon" },
   { name: "Toronto (GTA)", slug: "toronto" },
+  { name: "Etobicoke", slug: "etobicoke" },
 ];
 
 const services = [
@@ -141,6 +142,8 @@ export default function Footer() {
               &copy; 2025 Diamond Luxury Renovation. All rights reserved.
             </p>
             <div className="flex items-center space-x-2 text-gray-500 text-sm">
+              <span>10+ Years Experience</span>
+              <span>•</span>
               <span>Licensed & Insured</span>
               <span>•</span>
               <span>WSIB Covered</span>

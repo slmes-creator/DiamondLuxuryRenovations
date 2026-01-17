@@ -31,7 +31,7 @@ const certifications = [
   "WSIB Workplace Safety & Insurance Board Coverage",
   "Comprehensive General Liability Insurance",
   "Licensed General Contractor",
-  "15+ Years Industry Experience",
+  "10+ Years Industry Experience",
   "Certified Installation Specialists",
 ];
 
@@ -64,7 +64,7 @@ export default function About() {
                 our founder and master craftsman, knew there had to be a better way.
               </p>
               <p className="text-gray-700 mb-4 leading-relaxed">
-                After 15+ years in the construction industry, he built a team that shares his 
+                After 10+ years in the construction industry, he built a team that shares his 
                 obsession with quality and customer satisfaction. Today, we're proud to be one 
                 of Brampton's most trusted renovation companies.
               </p>

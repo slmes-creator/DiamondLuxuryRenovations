@@ -102,9 +102,6 @@ const gtaServiceAreas = [
   "Caledon",
   "Toronto",
   "Etobicoke",
-  "Milton",
-  "Oakville",
-  "Georgetown",
 ];
 
 export default function Contact() {

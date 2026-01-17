@@ -13,7 +13,7 @@ import { Shield, Award, Clock, CheckCircle, ArrowRight } from "lucide-react";
 const trustBadges = [
   { icon: Shield, label: "WSIB Covered" },
   { icon: Award, label: "Fully Insured" },
-  { icon: Clock, label: "15+ Years Experience" },
+  { icon: Clock, label: "10+ Years Experience" },
   { icon: CheckCircle, label: "Licensed Contractor" },
 ];
 
