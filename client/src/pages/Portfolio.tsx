@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
-import { MapPin, ArrowRight, Filter } from "lucide-react";
+import { ArrowRight, Filter } from "lucide-react";
 import { useState } from "react";
 
 import bathroomAfter6 from "@/assets/bathroom-after6.jpg";
@@ -214,18 +214,11 @@ export default function Portfolio() {
                   
                   <div className="p-5">
                     <h3 
-                      className="text-lg font-bold text-diamond-900 mb-2 truncate"
+                      className="text-lg font-bold text-diamond-900 truncate"
                       data-testid={`text-project-title-${project.id}`}
                     >
                       {project.title}
                     </h3>
-                    <div 
-                      className="flex items-center text-gray-500 text-sm"
-                      data-testid={`text-project-location-${project.id}`}
-                    >
-                      <MapPin className="w-4 h-4 mr-1" aria-hidden="true" />
-                      {project.location}
-                    </div>
                   </div>
                 </CardContent>
               </Card>
