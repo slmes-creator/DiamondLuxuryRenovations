@@ -144,9 +144,7 @@ export default function Footer() {
             <div className="flex items-center space-x-2 text-gray-500 text-sm">
               <span>10+ Years Experience</span>
               <span>•</span>
-              <span>Licensed & Insured</span>
-              <span>•</span>
-              <span>WSIB Covered</span>
+              <span>Licensed Contractor</span>
             </div>
             <div className="flex space-x-6 text-sm">
               <Link href="/privacy-policy">

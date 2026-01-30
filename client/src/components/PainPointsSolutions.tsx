@@ -21,8 +21,8 @@ const painPoints = [
 const solutions = [
   {
     icon: CheckCircle,
-    title: "Licensed & Insured Professionals",
-    description: "15+ years experience with guaranteed timelines and quality workmanship"
+    title: "Licensed Professionals",
+    description: "10+ years experience with guaranteed timelines and quality workmanship"
   },
   {
     icon: Gem,

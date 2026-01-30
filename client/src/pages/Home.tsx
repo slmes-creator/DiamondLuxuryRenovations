@@ -11,8 +11,6 @@ import { Button } from "@/components/ui/button";
 import { Shield, Award, Clock, CheckCircle, ArrowRight } from "lucide-react";
 
 const trustBadges = [
-  { icon: Shield, label: "WSIB Covered" },
-  { icon: Award, label: "Fully Insured" },
   { icon: Clock, label: "10+ Years Experience" },
   { icon: CheckCircle, label: "Licensed Contractor" },
 ];
@@ -66,9 +64,9 @@ export default function Home() {
               <div className="w-16 h-16 bg-luxury-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Shield className="w-8 h-8 text-luxury-600" />
               </div>
-              <h3 className="text-xl font-bold text-diamond-900 mb-3">Fully Protected</h3>
+              <h3 className="text-xl font-bold text-diamond-900 mb-3">Licensed & Trusted</h3>
               <p className="text-gray-600">
-                WSIB covered and fully insured for your complete peace of mind.
+                Fully licensed contractor with 10+ years of experience for your complete peace of mind.
               </p>
             </div>
             <div className="bg-white p-8 rounded-2xl shadow-lg text-center">

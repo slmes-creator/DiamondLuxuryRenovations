@@ -28,8 +28,6 @@ const values = [
 ];
 
 const certifications = [
-  "WSIB Workplace Safety & Insurance Board Coverage",
-  "Comprehensive General Liability Insurance",
   "Licensed General Contractor",
   "10+ Years Industry Experience",
   "Certified Installation Specialists",
@@ -106,10 +104,10 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-diamond-900 mb-6">Certifications & Insurance</h2>
+              <h2 className="text-3xl font-bold text-diamond-900 mb-6">Certifications & Credentials</h2>
               <p className="text-gray-700 mb-6">
-                Your peace of mind is paramount. We maintain comprehensive coverage and 
-                certifications to protect you and your property throughout every project.
+                Your peace of mind is paramount. We maintain proper licensing and 
+                certifications to ensure quality workmanship on every project.
               </p>
               <ul className="space-y-4">
                 {certifications.map((cert, index) => (

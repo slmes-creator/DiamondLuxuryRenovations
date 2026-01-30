@@ -21,7 +21,7 @@ export default function ServiceAreaTemplate({ city, neighborhoods }: ServiceArea
   return (
     <Layout
       title={`General Contractor ${city} | Diamond Luxury Renovation`}
-      description={`Trusted general contractor in ${city} for flooring, bathrooms, basements, and staircases. WSIB covered, fully insured. Call (416) 414-9170.`}
+      description={`Trusted general contractor in ${city} for flooring, bathrooms, basements, and staircases. 10+ years experience. Call (416) 414-9170.`}
     >
       <section className="py-20 bg-gradient-to-br from-diamond-900 via-diamond-800 to-diamond-900">
         <div className="max-w-7xl mx-auto px-6 text-center">
@@ -75,14 +75,6 @@ export default function ServiceAreaTemplate({ city, neighborhoods }: ServiceArea
                 <li className="flex items-center space-x-3">
                   <CheckCircle className="w-6 h-6 text-green-600" />
                   <span className="text-gray-700">10+ Years in Business</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-600" />
-                  <span className="text-gray-700">WSIB Covered</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-600" />
-                  <span className="text-gray-700">Fully Insured</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <CheckCircle className="w-6 h-6 text-green-600" />
