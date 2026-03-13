@@ -46,7 +46,7 @@ export default function About() {
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Brampton's premier general contractor, dedicated to transforming homes with 
-            exceptional craftsmanship and uncompromising quality since 2023.
+            exceptional craftsmanship and uncompromising quality since before 2015.
           </p>
         </div>
       </section>
