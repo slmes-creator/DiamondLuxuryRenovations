@@ -2,7 +2,6 @@ import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import Gallery from "@/components/Gallery";
 import PainPointsSolutions from "@/components/PainPointsSolutions";
-import OwnerTestimonial from "@/components/OwnerTestimonial";
 import Services from "@/components/Services";
 import CTASection from "@/components/CTASection";
 import SchemaMarkup from "@/components/SchemaMarkup";
@@ -82,7 +81,6 @@ export default function Home() {
         </div>
       </section>
 
-      <OwnerTestimonial />
       <Services />
       
       <section className="py-16 bg-diamond-900">

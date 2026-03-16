@@ -45,8 +45,7 @@ export default function About() {
             About Diamond Luxury Renovation
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Brampton's premier general contractor, dedicated to transforming homes with 
-            exceptional craftsmanship and uncompromising quality since before 2015.
+            Diamond Luxury Renovations started with Ronald's strong belief in doing work the right way.
           </p>
         </div>
       </section>
@@ -57,19 +56,13 @@ export default function About() {
             <div>
               <h2 className="text-3xl font-bold text-diamond-900 mb-6">Our Story</h2>
               <p className="text-gray-700 mb-4 leading-relaxed">
-                Diamond Luxury Renovation was born from a simple frustration: too many homeowners 
-                were being let down by contractors who overpromised and underdelivered. Ronald, 
-                our founder and master craftsman, knew there had to be a better way.
+                He spent over ten years learning the building and fixing trades. During that time, he saw how much it meant to homeowners to have someone who showed up, listened carefully, and truly cared about every small detail.
               </p>
               <p className="text-gray-700 mb-4 leading-relaxed">
-                After 10+ years in the construction industry, he built a team that shares his 
-                obsession with quality and customer satisfaction. Today, we're proud to be one 
-                of Brampton's most trusted renovation companies.
+                Ronald built this company around those important ideas. We try to do our best and avoid taking shortcuts. We focus on solid, good work and always treat the people who trust us with their homes with respect. Whether it's a big basement renovation or just a small project like new flooring, every job should be high-quality and impress the homeowner.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Every project we undertake is treated as a reflection of our values. From luxury 
-                flooring installations to complete basement transformations, we bring the same 
-                level of care and precision to every job.
+                That's the high standard Ronald believes in, and it's the standard our team brings to every home we work on.
               </p>
             </div>
             <div className="bg-gray-100 rounded-3xl p-8">
