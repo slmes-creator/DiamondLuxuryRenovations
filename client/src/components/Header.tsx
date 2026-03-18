@@ -68,7 +68,7 @@ export default function Header() {
                   <Star key={i} className="w-3 h-3 fill-current" />
                 ))}
               </div>
-              <span className="text-white font-bold text-sm" data-testid="text-rating">5.0</span>
+              <span className="text-white font-bold text-sm" data-testid="text-rating">4.4</span>
             </div>
 
             <Link href="/contact">
