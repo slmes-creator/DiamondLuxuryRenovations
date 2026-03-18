@@ -68,8 +68,8 @@ export default function Header() {
                   <Star key={i} className="w-3 h-3 fill-current" />
                 ))}
               </div>
-              <div className="flex flex-col">
-                <span className="text-white font-bold text-sm" data-testid="text-rating">5.0</span>
+              <div className="flex items-center space-x-1">
+                <span className="text-white font-bold text-sm" data-testid="text-rating">4.4</span>
                 <span className="text-white/70 text-xs" data-testid="text-review-count">(4)</span>
               </div>
             </div>
