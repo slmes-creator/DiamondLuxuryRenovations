@@ -69,8 +69,8 @@ export default function Header() {
                 ))}
               </div>
               <div className="flex items-center space-x-1">
-                <span className="text-white font-bold text-sm" data-testid="text-rating">4.4</span>
-                <span className="text-white/70 text-xs" data-testid="text-review-count">(4)</span>
+                <span className="text-white font-bold text-sm" data-testid="text-rating">4.6</span>
+                <span className="text-white/70 text-xs" data-testid="text-review-count">(5)</span>
               </div>
             </div>
 
