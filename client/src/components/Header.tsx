@@ -63,11 +63,6 @@ export default function Header() {
 
           <div className="flex items-center space-x-3">
             <div className="hidden md:flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/20">
-              <div className="flex text-luxury-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3 h-3 fill-current" />
-                ))}
-              </div>
               <div className="flex items-center space-x-1">
                 <span className="text-white font-bold text-sm" data-testid="text-rating">4.4</span>
                 <span className="text-white/70 text-xs" data-testid="text-review-count">(4)</span>
